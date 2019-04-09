@@ -6,6 +6,10 @@
 
 #define cache_ways 20
 #define hex_format 4
+#define mask_display 1
+#define ways_for_kernel 2
+#define max_group_size 18
+#define allow_overlap 1
 
 typedef struct group_infomation{
   int cgroup_no;
@@ -135,13 +139,10 @@ void display_group_info(cgroups_t* p){
 
 int main(int argc, char** argv){
 
-  int group_size = 5;
+
   int i = 1;
+  int group_size = 2;
   cgroups_t* ptr;
-  int mask_display = 0;
-  int ways_for_kernel = 2;
-  int max_group_size = 5;
-  int allow_overlap = 1;
   ptr = (cgroups_t*)malloc(sizeof(cgroups_t));
 
 /*  do{
